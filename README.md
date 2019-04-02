@@ -1,6 +1,6 @@
 Fyber's FairBid - Sample Android application
 ============================================
-This application demonstrates how to integrate Fyber's FairBid Mediation SDK using kotlin.
+This application demonstrates how to integrate Fyber's FairBid Mediation SDK using unity.
 
 #### Prerequisites
 * NEED TO EDIT
