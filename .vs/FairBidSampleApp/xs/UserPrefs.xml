@@ -1,0 +1,22 @@
+﻿<Properties StartupConfiguration="{1D576A9C-C34C-3530-AE01-6D59A90BA3FA}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scenes/MainScene.cs">
+    <Files>
+      <File FileName="Assets/Scenes/RewardedScene.cs" Line="6" Column="1" />
+      <File FileName="Assets/Scenes/BannerScene.cs" Line="49" Column="37" />
+      <File FileName="Assets/Scenes/InterstitialScene.cs" Line="48" Column="6" />
+      <File FileName="Assets/Scenes/MainScene.cs" Line="24" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/nadav/FairBidSampleApp/Assets/BackButton.cs" relfile="Assets/BackButton.cs" line="11" column="21" />
+      <Breakpoint file="/Users/nadav/FairBidSampleApp/Assets/Scenes/InterstitialScene.cs" relfile="Assets/Scenes/InterstitialScene.cs" line="21" column="1" />
+      <Breakpoint file="/Users/nadav/FairBidSampleApp/Assets/Scenes/BannerScene.cs" relfile="Assets/Scenes/BannerScene.cs" line="32" column="1" />
+      <Breakpoint file="/Users/nadav/FairBidSampleApp/Assets/Scenes/InterstitialScene.cs" relfile="Assets/Scenes/InterstitialScene.cs" line="33" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
