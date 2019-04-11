@@ -1,127 +1,143 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿//
+//  Copyright 2019  Fyber N.V
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
+using UnityEngine;
 using Fyber;
 using System;
 using UnityEngine.SceneManagement;
 
-/*
-* A Scene demonstrating how to request and display Banner ads using the FairBid SDK.
-*/
-public class BannerScene : MonoBehaviour, BannerListener
-{
-    /*
-    * The Banner's placement name - as configured at Fyber console
-    * "BannerPlacementIdExample" can be used using the provided example APP_ID
-    * TODO change to your own configured placement.
-    */
+/// <summary>
+/// A Scene demonstrating how to request and display Banner ads using the FairBid SDK.
+/// </summary>
+public class BannerScene : MonoBehaviour, BannerListener {
+
+    /// <summary>
+    /// The Banner's placement name - as configured at Fyber console
+    /// "BannerPlacementIdExample" can be used using the provided example APP_ID
+    /// </summary>
+    /// TODO change to your own configured placement.
     public const String BannerPlacementName = "BannerPlacementIdExample";
-    private Animation mAnimation;
 
-    void Start()
-    {
-        initAnimationObject();
-        setFairBidBannerListener();
-        mAnimation.resetAnimation();
-    }
+    /// <summary>
+    /// Helper for managing the user interface
+    /// </summary>
+    private PlacementSampleUIWrapper mUserInterfaceWrapper;
 
-    /*
-     * Internal sample method. initialize the animation view used to display callbacks and events.
-      */
-    private void initAnimationObject()
-    {
-        mAnimation = new Animation();
-        mAnimation.mRequestAdButton = transform.Find("Background/ShowBannerAd").GetComponent<Button>();
-        mAnimation.mShowAdButton = transform.Find("Background/DestroyAd").GetComponent<Button>();
-        mAnimation.CleanCllBackListButton = transform.Find("Background/CleanCallBacksButton").GetComponent<Button>();
-        mAnimation.LogsAdapter = transform.Find("Background/ScrollView").GetComponent<LogsViewAdapter>();
-        mAnimation.mSpinnerBackground = transform.Find("Background/ShowBannerAd/ProgressBackground").GetComponent<Image>();
-        mAnimation.mSpinnerProgress = transform.Find("Background/ShowBannerAd/ProgressBackground/Progress").GetComponent<Image>();
-        mAnimation.mBackButton = transform.Find("Background/Header/BackButton").GetComponent<Image>();
-        mAnimation.mTopToggle = transform.Find("Background/ToggleTop").GetComponent<Toggle>();
-        mAnimation.mBottomToggle = transform.Find("Background/ToggleBottom").GetComponent<Toggle>();
-        mAnimation.mRequestAdButton.onClick.AddListener(() => OnShowBannerClicked(BannerPlacementName));
-        mAnimation.mShowAdButton.onClick.AddListener(() => OnDestroyBannerClickked(BannerPlacementName));
-    }
-
-    /*
-    * Helper inteneral method to return to the main scene
-    */
-    public void DestroyBannerScene()
-    {
-        Banner.Destroy(BannerPlacementName);
-        SceneManager.LoadScene("MainScreen");
-    }
-
-    /*
-     * This function provides an example of Listening to FairBid Banner Callbacks and events.
-    */
-    private void setFairBidBannerListener()
-    {
-        Banner.SetBannerListener(this);
-    }
-
-    /*
-    * Called when the showBanner is clicked
-    * This function provides an example for calling the API method Banner.display in order to display a banner placement
-    * @param bannerPlacementName name of placement to be requested
-    */
-    private void OnShowBannerClicked(String bannerPlacementName)
-    {
+    /// <summary>
+    /// Called when the showBanner is clicked
+    /// This function provides an example for calling the API method Banner.display in order to display a banner placement
+    /// </summary>
+    /// <param name="bannerPlacementName">name of placement to be requested</param>
+    private void OnShowBannerClicked(String bannerPlacementName) {
         BannerOptions bannerOptions = generateBannerOptions();
         Banner.Show(bannerPlacementName, bannerOptions);
-        mAnimation.startRequestAnimation();
+        mUserInterfaceWrapper.startRequestAnimation();
     }
 
-    /*
-    * Convenience method. Generates a new instance of BannerOptions and configure it accordingly.
-    */
-    private BannerOptions generateBannerOptions()
-    {
+    /// <summary>
+    /// Convenience method. Generates a new instance of BannerOptions and configure it accordingly.
+    /// </summary>
+    /// <returns>A new banner options instance.</returns>
+    private BannerOptions generateBannerOptions() {
         BannerOptions bannerOptions = new BannerOptions();
-        if (mAnimation.isTopToggleSelcted())
-        {
+        if (mUserInterfaceWrapper.isTopToggleSelcted()) {
             bannerOptions.DisplayAtTheTop();
-        }
-        else
-        {
+        } else {
             bannerOptions.DisplayAtTheBottom();
         }
         return bannerOptions;
     }
 
-    /*
-    * Called when the destroyBannerButton is clicked
-    * This function provides an example for calling the API method Banner.destroy in order to destroy a banner placement
-    * @param bannerPlacementName name of placement to be destroyed
-    */
-    private void OnDestroyBannerClickked(String bannerPlacementName)
-    {
+    /// <summary>
+    /// Sets the fair bid banner listener.
+    /// </summary>
+    private void setFairBidBannerListener() {
+        Banner.SetBannerListener(this);
+    }
+
+    #region BannerListener
+
+    /// <summary>
+    /// Called when the destroyBannerButton is clicked
+    /// This function provides an example for calling the API method Banner.destroy in order to destroy a banner placement
+    /// </summary>
+    /// <param name="bannerPlacementName">name of placement to be destroyed</param>
+    private void OnDestroyBannerClicked(String bannerPlacementName) {
         Banner.Destroy(bannerPlacementName);
-        mAnimation.resetAnimation();
+        mUserInterfaceWrapper.resetAnimation();
     }
 
-    /*
-    * This an example of Listening to FairBid Banner Callbacks and events.
-    */
-    public void OnError(string placementName, string error)
-    {
-        mAnimation.addLog("OnError()");
-        mAnimation.resetAnimation();
+    /// <summary>
+    /// This an example of Listening to FairBid Banner Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnLoad(string placementName) {
+        mUserInterfaceWrapper.addLog("OnLoad()");
+        mUserInterfaceWrapper.onAdAvailableAnimation();
     }
 
-    public void OnLoad(string placementName)
-    {
-        mAnimation.addLog("OnLoad()");
-        mAnimation.onAdAvailableAnimation();
+    /// <summary>
+    /// This an example of Listening to FairBid Banner Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnShow(string placementName) {
+        mUserInterfaceWrapper.addLog("OnShow()");
     }
 
-    public void OnShow(string placementName)
-    {
-        mAnimation.addLog("OnShow()");
+    /// <summary>
+    /// This an example of Listening to FairBid Banner Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnClick(string placementName) {
+        mUserInterfaceWrapper.addLog("OnClick()");
     }
 
-    public void OnClick(string placementName)
-    {
-        mAnimation.addLog("OnClick()");
+    /// <summary>
+    /// This an example of Listening to FairBid Banner Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    /// <param name="error">Error.</param>
+    public void OnError(string placementName, string error) {
+        mUserInterfaceWrapper.addLog("OnError()");
+        mUserInterfaceWrapper.resetAnimation();
     }
+
+    #endregion
+
+    /// <summary>
+    /// Start this instance.
+    /// </summary>
+    void Start() {
+        initAnimationObject();
+        setFairBidBannerListener();
+        mUserInterfaceWrapper.resetAnimation();
+    }
+
+    /// <summary>
+    /// Internal sample method. initialize the placement user interface used to display callbacks and events.
+    /// </summary>
+    private void initAnimationObject() {
+        mUserInterfaceWrapper = new PlacementSampleUIWrapper(true, transform, () => OnShowBannerClicked(BannerPlacementName), () => OnDestroyBannerClicked(BannerPlacementName));
+    }
+
+    /// <summary>
+    /// Internal sample method. returns to the main scene
+    /// </summary>
+    public void DestroyBannerScene() {
+        Banner.Destroy(BannerPlacementName);
+        SceneManager.LoadScene("MainScreen");
+    }
+
 }

@@ -654,9 +654,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3fa18671561b405f97496ad132f0d6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8287154947121745898, guid: fc5f9e81b17944c32a72fe99e10467fc, type: 3}
-  scrollView: {fileID: 288182600}
-  content: {fileID: 574290314}
+  mLogLine: {fileID: 8287154947121745898, guid: fc5f9e81b17944c32a72fe99e10467fc, type: 3}
+  mScrollView: {fileID: 288182600}
+  mContent: {fileID: 574290314}
 --- !u!114 &288182600
 MonoBehaviour:
   m_ObjectHideFlags: 0

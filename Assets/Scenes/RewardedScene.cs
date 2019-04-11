@@ -1,142 +1,174 @@
-﻿using UnityEngine;
-using UnityEngine.UI;
+﻿//
+//  Copyright 2019  Fyber N.V
+//
+//    Licensed under the Apache License, Version 2.0 (the "License");
+//    you may not use this file except in compliance with the License.
+//    You may obtain a copy of the License at
+//
+//        http://www.apache.org/licenses/LICENSE-2.0
+//
+//    Unless required by applicable law or agreed to in writing, software
+//    distributed under the License is distributed on an "AS IS" BASIS,
+//    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//    See the License for the specific language governing permissions and
+//    limitations under the License.
+
+using UnityEngine;
 using Fyber;
 using System;
 using UnityEngine.SceneManagement;
 
-/*
-* A Scene demonstrating how to request and display rewarded ads using the FairBid SDK.
-*/
-public class RewardedScene : MonoBehaviour, RewardedListener
-{
-    /*
-    * The Rewarded's placement name - as configured at Fyber console
-    * "RewardedPlacementIdExample" can be used using the provided example APP_ID
-    * TODO change to your own configured placement.
-    */
+/// <summary>
+/// A Scene demonstrating how to request and display rewarded ads using the FairBid SDK.
+/// </summary>
+public class RewardedScene : MonoBehaviour, RewardedListener {
+
+    /// <summary>
+    /// The Rewarded's placement name - as configured at Fyber console
+    /// "RewardedPlacementIdExample" can be used using the provided example APP_ID
+    /// </summary>
+    /// TODO change to your own configured placement.
     private const String RewardedPlacementName = "RewardedPlacementIdExample";
-    private Animation mAnimation;
 
-    void Start()
-    {
-        initAnimationObject();
-        setFairBidRewardedListener();
-        mAnimation.resetAnimation();
+    /// <summary>
+    /// Helper for managing the user interface
+    /// </summary>
+    private PlacementSampleUIWrapper mUserInterfaceWrapper;
+
+    /// <summary>
+    /// Called when the requestButton is clicked
+    /// This function provides an example for calling the API method Rewarded.Request in order to request a rewarded placement
+    /// </summary>
+    /// <param name="rewardedPlacementName">The name of placement to be requested.</param>
+    private void OnRequestAdButtonClicked(String rewardedPlacementName) {
+        if (!Rewarded.IsAvailable(rewardedPlacementName)) {
+            Rewarded.Request(rewardedPlacementName);
+            mUserInterfaceWrapper.startRequestAnimation();
+        } else {
+            mUserInterfaceWrapper.onAdAvailableAnimation();
+        }
     }
 
-    /*
-    * Internal sample method. initialize the animation view used to display callbacks and events.
-    */
-    private void initAnimationObject()
-    {
-        mAnimation = new Animation();
-        mAnimation.mRequestAdButton = transform.Find("Background/RequestAd").GetComponent<Button>();
-        mAnimation.mShowAdButton = transform.Find("Background/ShowAd").GetComponent<Button>();
-        mAnimation.CleanCllBackListButton = transform.Find("Background/CleanCallBacksButton").GetComponent<Button>();
-        mAnimation.LogsAdapter = transform.Find("Background/ScrollView").GetComponent<LogsViewAdapter>();
-        mAnimation.mSpinnerBackground = transform.Find("Background/RequestAd/ProgressBackground").GetComponent<Image>();
-        mAnimation.mSpinnerProgress = transform.Find("Background/RequestAd/ProgressBackground/Progress").GetComponent<Image>();
-        mAnimation.mBackButton = transform.Find("Background/Header/BackButton").GetComponent<Image>();
-        mAnimation.mRequestAdButton.onClick.AddListener(() => OnRequestAdButtonClicked(RewardedPlacementName));
-        mAnimation.mShowAdButton.onClick.AddListener(() => OnShowAdButtonClicked(RewardedPlacementName));
+    /// <summary>
+    /// Called when the showButton is clicked
+    /// This function provides an example for calling the API method Rewarded.Show in order to show the ad received in the provided placement
+    /// </summary>
+    /// <param name="rewardedPlacementName">name of placement to be displayed.</param>
+    private void OnShowAdButtonClicked(String rewardedPlacementName) {
+        Rewarded.Show(rewardedPlacementName);
+        mUserInterfaceWrapper.resetAnimation();
     }
 
-    /*
-    * Helper inteneral method to return to the main scene
-    */
-    public void DestroyScene()
-    {
-        SceneManager.LoadScene("MainScreen");
-    }
-
-    /*
-    * This function provides an example of Listening to FairBid Rewarded Callbacks and events.
-    */
-    private void setFairBidRewardedListener()
-    {
+    /// <summary>
+    /// This function provides an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    private void setFairBidRewardedListener() {
         Rewarded.SetRewardedListener(this);
     }
 
-    /*
-    * Called when the requestButton is clicked
-    * This function provides an example for calling the API method Rewarded.rqueest in order to request a rewarded placement
-    * @param rewardedPlacementName name of placement to be requested
-    */
-    private void OnRequestAdButtonClicked(String rewardedPlacementName)
-    {
-        if (!Rewarded.IsAvailable(rewardedPlacementName))
-        {
-            Rewarded.Request(rewardedPlacementName);
-            mAnimation.startRequestAnimation();
-        }
-        else
-        {
-            mAnimation.onAdAvailableAnimation();
-        }
+    #region RewardedListener methods
+
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnShow(string placementName) {
+        mUserInterfaceWrapper.addLog("OnShow()");
     }
 
-    /*
-    * Called when the showButton is clicked
-    * This function provides an example for calling the API method Rewarded.show in order to show the ad received in the provided placement
-    * @param rewardedPlacementName name of placement to be displayed
-    */
-    private void OnShowAdButtonClicked(String rewardedPlacementName)
-    {
-        Rewarded.Show(rewardedPlacementName);
-        mAnimation.resetAnimation();
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnClick(string placementName) {
+
+        mUserInterfaceWrapper.addLog("OnClick()");
     }
 
-    /*
-    * This an example of Listening to FairBid Rewarded Callbacks and events.
-    */
-    public void OnShow(string placementName)
-    {
-        mAnimation.addLog("OnShow()");
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnHide(string placementName) {
+
+        mUserInterfaceWrapper.addLog("OnHide()");
     }
 
-    public void OnClick(string placementName)
-    {
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnShowFailure(string placementName) {
 
-        mAnimation.addLog("OnClick()");
+        mUserInterfaceWrapper.addLog("OnShowFailure()");
     }
 
-    public void OnHide(string placementName)
-    {
-
-        mAnimation.addLog("OnHide()");
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnAvailable(string placementName) {
+        mUserInterfaceWrapper.addLog("OnAvailable()");
+        mUserInterfaceWrapper.onAdAvailableAnimation();
     }
 
-    public void OnShowFailure(string placementName)
-    {
-
-        mAnimation.addLog("OnShowFailure()");
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnUnavailable(string placementName) {
+        mUserInterfaceWrapper.addLog("OnUnavailable()");
+        mUserInterfaceWrapper.resetAnimation();
     }
 
-    public void OnAvailable(string placementName)
-    {
-        mAnimation.addLog("OnAvailable()");
-        mAnimation.onAdAvailableAnimation();
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnAudioStart(string placementName) {
+        mUserInterfaceWrapper.addLog("OnAudioStart()");
     }
 
-    public void OnUnavailable(string placementName)
-    {
-        mAnimation.addLog("OnUnavailable()");
-        mAnimation.resetAnimation();
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnAudioFinish(string placementName) {
+        mUserInterfaceWrapper.addLog("OnAudioFinish()");
     }
 
-    public void OnAudioStart(string placementName)
-    {
-        mAnimation.addLog("OnAudioStart()");
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName"The Placement name.</param>
+    /// <param name="userRewarded">If set to <c>true</c> user rewarded.</param>
+    public void OnCompletion(string placementName, bool userRewarded) {
+        mUserInterfaceWrapper.addLog(userRewarded ? "OnCompletion(), userRewarded:True" : "OnCompletion()");
     }
 
-    public void OnAudioFinish(string placementName)
-    {
-        mAnimation.addLog("OnAudioFinish()");
+    #endregion
+
+    /// <summary>
+    /// Start this instance.
+    /// </summary>
+    void Start() {
+        initAnimationObject();
+        setFairBidRewardedListener();
+        mUserInterfaceWrapper.resetAnimation();
     }
 
-    public void OnCompletion(string placementName, bool userRewarded)
-    {
-        mAnimation.addLog(userRewarded ? "OnCompletion(), userRewarded:True" : "OnCompletion()");
+    /// <summary>
+    /// Internal sample method. initialize the placement user interface used to display callbacks and events.
+    /// </summary>
+    private void initAnimationObject() {
+        mUserInterfaceWrapper = new PlacementSampleUIWrapper(false, , () => OnRequestAdButtonClicked(RewardedPlacementName), () => OnShowAdButtonClicked(RewardedPlacementName));
+    }
+
+    /// <summary>
+    /// Internal sample method. returns to the main scene
+    /// </summary>
+    public void DestroyScene() {
+        SceneManager.LoadScene("MainScreen");
     }
 
 }
