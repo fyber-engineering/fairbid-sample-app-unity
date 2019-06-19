@@ -13,7 +13,7 @@ This application demonstrates how to integrate Fyber's FairBid Mediation SDK usi
 * Requesting Rewarded Ads - [RewardedScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/RewardedScene.cs)
 
 #### Support and documentation
-Please visit our [documentation](https://fyber-mediation.fyber.com/docs/ad-networks-tables)
+Please visit our [documentation](https://dev-android.fyber.com/docs)
 
 #### Project License
 
