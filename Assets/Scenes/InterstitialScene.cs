@@ -122,22 +122,6 @@ public class InterstitialScene : MonoBehaviour, InterstitialListener {
         mUserInterfaceWrapper.resetAnimation();
     }
 
-    /// <summary>
-    /// This an example of Listening to FairBid Interstitial Callbacks and events.
-    /// </summary>
-    /// <param name="placementName">The Placement name.</param>
-    public void OnAudioStart(string placementName) {
-        mUserInterfaceWrapper.addLog("OnAudioStart()");
-    }
-
-    /// <summary>
-    /// This an example of Listening to FairBid Interstitial Callbacks and events.
-    /// </summary>
-    /// <param name="placementName">The Placement name.</param>
-    public void OnAudioFinish(string placementName) {
-        mUserInterfaceWrapper.addLog("OnAudioFinish()");
-    }
-
     #endregion
 
     /// <summary>

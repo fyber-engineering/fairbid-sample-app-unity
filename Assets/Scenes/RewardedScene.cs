@@ -124,22 +124,6 @@ public class RewardedScene : MonoBehaviour, RewardedListener {
     /// <summary>
     /// This an example of Listening to FairBid Rewarded Callbacks and events.
     /// </summary>
-    /// <param name="placementName">The Placement name.</param>
-    public void OnAudioStart(string placementName) {
-        mUserInterfaceWrapper.addLog("OnAudioStart()");
-    }
-
-    /// <summary>
-    /// This an example of Listening to FairBid Rewarded Callbacks and events.
-    /// </summary>
-    /// <param name="placementName">The Placement name.</param>
-    public void OnAudioFinish(string placementName) {
-        mUserInterfaceWrapper.addLog("OnAudioFinish()");
-    }
-
-    /// <summary>
-    /// This an example of Listening to FairBid Rewarded Callbacks and events.
-    /// </summary>
     /// <param name="placementName"The Placement name.</param>
     /// <param name="userRewarded">If set to <c>true</c> user rewarded.</param>
     public void OnCompletion(string placementName, bool userRewarded) {
