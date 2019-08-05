@@ -28,7 +28,7 @@ public class RewardedScene : MonoBehaviour, RewardedListener {
     /// "RewardedPlacementIdExample" can be used using the provided example APP_ID
     /// </summary>
     /// TODO change to your own configured placement.
-    private const String RewardedPlacementName = "RewardedPlacementIdExample";
+    private const String RewardedPlacementName = "197406";
 
     /// <summary>
     /// Helper for managing the user interface
