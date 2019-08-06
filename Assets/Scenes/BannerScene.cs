@@ -28,7 +28,7 @@ public class BannerScene : MonoBehaviour, BannerListener {
     /// "BannerPlacementIdExample" can be used using the provided example APP_ID
     /// </summary>
     /// TODO change to your own configured placement.
-    public const String BannerPlacementName = "BannerPlacementIdExample";
+    public const String BannerPlacementName = "197407";
 
     /// <summary>
     /// Helper for managing the user interface

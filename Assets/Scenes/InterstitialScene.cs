@@ -28,7 +28,7 @@ public class InterstitialScene : MonoBehaviour, InterstitialListener {
     /// "InterstitialPlacementIdExample" can be used using the provided example APP_ID
     /// </summary>
     /// TODO change to your own configured placement.
-    private const String InterstitialPlacementName = "InterstitialPlacementIdExample";
+    private const String InterstitialPlacementName = "197405";
 
     /// <summary>
     /// Helper for managing the user interface
