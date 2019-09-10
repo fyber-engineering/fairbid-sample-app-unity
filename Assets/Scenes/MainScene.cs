@@ -37,7 +37,7 @@ public class MainScene : MonoBehaviour {
     /// Start this instance.
     /// </summary>
     void Start() {
-        setFaBidVersionTextView();
+        setFairBidVersionTextView();
         startFairBidSdk(PUBLISHER_APP_ID);
     }
 
@@ -64,7 +64,9 @@ public class MainScene : MonoBehaviour {
         FairBid.ShowTestSuite();
     }
 
-
+    /// <summary>
+    /// Helper method for displaying the FairBid SDK version
+    /// </summary>
     private void setFairBidVersionTextView()
     {
         Text fairbidTextViewVersion = transform.Find("Background/FyberVersionTV").GetComponent<Text>();
