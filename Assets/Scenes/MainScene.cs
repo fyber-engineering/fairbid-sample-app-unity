@@ -17,6 +17,7 @@ using UnityEngine;
 using Fyber;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /// <summary>
 /// The Main Scene,
@@ -30,11 +31,13 @@ public class MainScene : MonoBehaviour {
     /// </summary>
     /// TODO replace with your own app id.
     private const String PUBLISHER_APP_ID = "109613";
+    
 
     /// <summary>
     /// Start this instance.
     /// </summary>
     void Start() {
+        setFairBidVersionTextView();
         startFairBidSdk(PUBLISHER_APP_ID);
     }
 
@@ -59,5 +62,14 @@ public class MainScene : MonoBehaviour {
     /// </summary>
     public void ShowTestSuite() {
         FairBid.ShowTestSuite();
+    }
+
+    /// <summary>
+    /// Helper method for displaying the FairBid SDK version
+    /// </summary>
+    private void setFairBidVersionTextView()
+    {
+        Text fairbidTextViewVersion = transform.Find("Background/FyberVersionTV").GetComponent<Text>();
+        fairbidTextViewVersion.text = "FYBER FAIRBID " + FairBid.Version;
     }
 }
