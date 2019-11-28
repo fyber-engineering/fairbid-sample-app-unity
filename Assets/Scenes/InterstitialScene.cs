@@ -69,15 +69,35 @@ public class InterstitialScene : MonoBehaviour, InterstitialListener {
 
 
     #region InterstitialListener methods
+    /// <summary>
+    /// This an example of Listening to FairBid Interstitial Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    /// <param name="impressionData">The Impression Data.</param>
+    public void OnShow(string placementName, ImpressionData impressionData)
+    {
+        mUserInterfaceWrapper.addLog("OnShow()");
+    }
 
     /// <summary>
     /// This an example of Listening to FairBid Interstitial Callbacks and events.
     /// </summary>
     /// <param name="placementName">The Placement name.</param>
-    public void OnShow(string placementName) {
-        mUserInterfaceWrapper.addLog("OnShow()");
+    /// <param name="impressionData">The Impression Data.</param>
+    public void OnShowFailure(string placementName, ImpressionData impressionData)
+    {
+        mUserInterfaceWrapper.addLog("OnShowFailure()");
     }
 
+    /// <summary>
+    /// This an example of Listening to FairBid Interstitial Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnRequestStart(string placementName)
+    {
+        mUserInterfaceWrapper.addLog("OnRequestStart()");
+    }
+    
     /// <summary>
     /// This an example of Listening to FairBid Interstitial Callbacks and events.
     /// </summary>

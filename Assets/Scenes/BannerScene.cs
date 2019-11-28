@@ -92,8 +92,19 @@ public class BannerScene : MonoBehaviour, BannerListener {
     /// This an example of Listening to FairBid Banner Callbacks and events.
     /// </summary>
     /// <param name="placementName">The Placement name.</param>
-    public void OnShow(string placementName) {
+    /// <param name="impressionData">The Impression Data.</param>
+    public void OnShow(string placementName, ImpressionData impressionData)
+    {
         mUserInterfaceWrapper.addLog("OnShow()");
+    }
+
+    /// <summary>
+    /// This an example of Listening to FairBid Banner Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnRequestStart(string placementName)
+    {
+        mUserInterfaceWrapper.addLog("OnRequestStart()");
     }
 
     /// <summary>
@@ -139,5 +150,4 @@ public class BannerScene : MonoBehaviour, BannerListener {
         Banner.Destroy(BannerPlacementName);
         SceneManager.LoadScene("MainScreen");
     }
-
 }
