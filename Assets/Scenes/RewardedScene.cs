@@ -72,8 +72,27 @@ public class RewardedScene : MonoBehaviour, RewardedListener {
     /// This an example of Listening to FairBid Rewarded Callbacks and events.
     /// </summary>
     /// <param name="placementName">The Placement name.</param>
-    public void OnShow(string placementName) {
+    public void OnShow(string placementId, ImpressionData placementName)
+    {
         mUserInterfaceWrapper.addLog("OnShow()");
+    }
+
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnShowFailure(string placementName, ImpressionData impressionData)
+    {
+        mUserInterfaceWrapper.addLog("OnShowFailure()");
+    }
+
+    /// <summary>
+    /// This an example of Listening to FairBid Rewarded Callbacks and events.
+    /// </summary>
+    /// <param name="placementName">The Placement name.</param>
+    public void OnRequestStart(string placementName)
+    {
+        mUserInterfaceWrapper.addLog("OnRequestStart()");
     }
 
     /// <summary>
@@ -124,7 +143,7 @@ public class RewardedScene : MonoBehaviour, RewardedListener {
     /// <summary>
     /// This an example of Listening to FairBid Rewarded Callbacks and events.
     /// </summary>
-    /// <param name="placementName"The Placement name.</param>
+    /// <param name="placementName">The Placement name.</param>
     /// <param name="userRewarded">If set to <c>true</c> user rewarded.</param>
     public void OnCompletion(string placementName, bool userRewarded) {
         mUserInterfaceWrapper.addLog(userRewarded ? "OnCompletion(), userRewarded:True" : "OnCompletion()");
@@ -154,5 +173,6 @@ public class RewardedScene : MonoBehaviour, RewardedListener {
     public void DestroyScene() {
         SceneManager.LoadScene("MainScreen");
     }
+
 
 }
