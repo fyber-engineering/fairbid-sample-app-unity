@@ -2,6 +2,13 @@ Fyber's FairBid - Sample Unity application
 ============================================
 This application demonstrates how to integrate Fyber's FairBid Mediation SDK using unity.
 
+Table of contents
+=================
+
+* [Prerequisites](#prerequisites)
+* [Navigating the sample code](#navigating-the-sample-code)
+* [Support and documentation](#support-and-documentation)
+
 #### Prerequisites
 * Unity Editor 2018.*
 
