@@ -90,86 +90,83 @@
 
   <!-- iOS Cocoapod dependencies can be specified by each iosPod element. -->
   <iosPods>
-    <sources>
-      <source>https://cocoapods.mycompany.com/Specs</source>
-    </sources>
     <!-- AdColony -->
-    <iosPod name="AdColony" path="../adColony" version="~> 4.1.2" bitcodeEnabled="true" minTargetSdk="8.0">
+    <iosPod name="AdColony" version="~> 4.1.2" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- AdMob -->
-    <iosPod name="Google-Mobile-Ads-SDK" path="../google-mobile-ads-sdk" version="~> 7.60.0" bitcodeEnabled="true" minTargetSdk="8.0">
+    <iosPod name="Google-Mobile-Ads-SDK" version="~> 7.60.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- AppLovin -->
-    <iosPod name="AppLovinSDK" path="../appLovinsdk" version="~> 6.12.8" bitcodeEnabled="true" minTargetSdk="9.0">
+    <iosPod name="AppLovinSDK" version="~> 6.12.8" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Chartboost -->
-    <iosPod name="ChartboostSDK" path="../chartboostsdk" version="~> 8.1.0" bitcodeEnabled="true">
+    <iosPod name="ChartboostSDK" version="~> 8.1.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Facebook Audience Network -->
-    <iosPod name="FBAudienceNetwork" path="../fbaudiencenetwork" version="~> 5.9.0" bitcodeEnabled="true" minTargetSdk="9.0">
+    <iosPod name="FBAudienceNetwork" version="~> 5.9.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Ironsource -->
-    <iosPod name="IronSourceSDK" path="../ironsourcesdk" version="~> 6.16.0.0" bitcodeEnabled="true">
+    <iosPod name="IronSourceSDK" version="~> 6.16.0.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Mintegral -->
-    <iosPod name="MintegralAdSDK" path="../mintegraladsdk" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+    <iosPod name="MintegralAdSDK" version="~> 6.1.0.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
-    <iosPod name="MintegralAdSDK/RewardVideoAd" path="../mintegraladsdk/rewardvideoad" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+    <iosPod name="MintegralAdSDK/RewardVideoAd" version="~> 6.1.0.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
-    <iosPod name="MintegralAdSDK/InterstitialVideoAd" path="../mintegraladsdk/interstitialvideoad" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+    <iosPod name="MintegralAdSDK/InterstitialVideoAd" version="~> 6.1.0.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
-    <iosPod name="MintegralAdSDK/BidInterstitialVideoAd" path="../mintegraladsdk/bidinterstitialvideoad" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+    <iosPod name="MintegralAdSDK/BidInterstitialVideoAd" version="~> 6.1.0.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Tapjoysdk -->
-    <iosPod name="TapjoySDK" path="../tapjoysdk" version="~> 12.4.2" bitcodeEnabled="true">
+    <iosPod name="TapjoySDK" version="~> 12.4.2" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Unity -->
-    <iosPod name="UnityAds" path="../unityads" version="~> 3.4.2" bitcodeEnabled="true" minTargetSdk="9.0">
+    <iosPod name="UnityAds" version="~> 3.4.2" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Verizon -->
-    <iosPod name="Verizon-Ads-StandardEdition" path="../verizon-ads-standard-edition" version="~> 1.5.0" bitcodeEnabled="true" minTargetSdk="8.0">
+    <iosPod name="Verizon-Ads-StandardEdition" version="~> 1.5.0" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
     </iosPod>
     <!-- Vungle -->
-    <iosPod name="VungleSDK-iOS" path="../vunglesdk-ios" version="~> 6.5.2" bitcodeEnabled="true" minTargetSdk="9.0">
+    <iosPod name="VungleSDK-iOS" version="~> 6.5.2" bitcodeEnabled="true">
       <sources>
         <source>https://github.com/CocoaPods/Specs</source>
       </sources>
