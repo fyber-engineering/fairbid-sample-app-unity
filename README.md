@@ -76,6 +76,11 @@ Navigate to the file [mainTemplate.gradle](https://github.com/Heyzap/fairbid-sam
 
 Make sure the network versions you're integrating match the versions present in the [Fyber's dev portal](https://fyber-mediation.fyber.com/docs/supported-networks)
 
+**Note:** If you have integrated several mediated networks in this project you need to uncommented the multidex entry in the file [mainTemplate.gradle](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Plugins/Android/mainTemplate.gradle)
+```gradle
+        multiDexEnabled true
+```
+
 #### Additional step - Android Manifest
 
 Some networks may require you to add extra manifest entries.  
