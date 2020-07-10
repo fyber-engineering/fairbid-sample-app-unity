@@ -7,15 +7,13 @@ def mediation_pods
   # AdColony
   pod 'AdColony', '4.1.2'
   # AdMob
-  pod 'Google-Mobile-Ads-SDK', '7.57.0'
+  pod 'Google-Mobile-Ads-SDK', '7.60.0'
   # AppLovin
-  pod 'AppLovinSDK', '6.11.0'
+  pod 'AppLovinSDK', '6.12.8'
   # Chartboost
   pod 'ChartboostSDK', '8.1.0'
   # Facebook Audience Network
-  pod 'FBAudienceNetwork', '5.8.0'
-  # Inmobi
-  pod 'InMobiSDK', '7.2.0'
+  pod 'FBAudienceNetwork', '5.9.0'
   # Ironsource
   pod 'IronSourceSDK', '6.16.0.0'
   # Mintegral
@@ -26,7 +24,9 @@ def mediation_pods
   # Tapjoy
   pod 'TapjoySDK', '12.4.2'
   # Unity
-  pod 'UnityAds', '3.3.0'
+  pod 'UnityAds', '3.4.2'
+  # Verizon
+  pod 'Verizon-Ads-StandardEdition', '1.5.0'
   # Vungle
   pod 'VungleSDK-iOS', '6.5.2'
 end
