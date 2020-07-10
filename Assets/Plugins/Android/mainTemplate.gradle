@@ -70,7 +70,7 @@ dependencies {
     // implementation 'com.chartboost:chartboost-sdk:8.0.1'
 
 	// // facebook audience network:
-    // implementation 'com.facebook.android:audience-network-sdk:5.8.0'
+    // implementation 'com.facebook.android:audience-network-sdk:5.9.0'
 
 	// // ironsource:
     // implementation 'com.ironsource.sdk:mediationsdk:6.16.0'
