@@ -6,7 +6,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath 'com.android.tools.build:gradle:3.2.0'
+		classpath 'com.android.tools.build:gradle:3.3.1'
 	}
 }
 
@@ -17,6 +17,33 @@ allprojects {
       flatDir {
         dirs 'libs'
       }
+
+      // Uncomment the repositories for the third parties you wish to integrate
+      // maven {
+      //     name "AdColony's maven repo"
+      //     url 'https://adcolony.bintray.com/AdColony'
+      // }
+      // maven {
+      //     name "Tapjoy's maven repo"
+      //     url 'https://tapjoy.bintray.com/maven'
+      // }
+      // maven {
+      //     name "IronSource's maven repo"
+      //     url 'https://dl.bintray.com/ironsource-mobile/android-sdk'
+      // }
+      // maven {
+      //     name "HyprMX's maven repo"
+      //     url 'https://raw.githubusercontent.com/HyprMXMobile/Android-SDKs/master'
+      // }
+      // maven {
+      //     name "UnityAds's maven repo"
+      //     url 'https://dl.bintray.com/unityads/UnityAds'
+      // }
+      // maven {
+      //     name "Chartboost's maven repo"
+      //     url 'https://chartboostmobile.bintray.com/Chartboost'
+      // }
+
    }
 }
 
@@ -24,7 +51,57 @@ apply plugin: 'com.android.application'
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
-**DEPS**}
+**DEPS**
+
+     // Uncomment third party network you wish to integrate.
+     // More info here: https://fyber-mediation.fyber.com/docs/supported-networks#platform-unity
+
+    // uncomment the line below if your min SDK version is lower than API and you intend several networks
+    // This is due to Dalvik's method count limit per dex file being exceeded as you integrate more networks
+    // implementation 'androidx.multidex:multidex:2.0.1'
+
+	// // adcolony:
+    // implementation 'com.adcolony:sdk:4.1.0'
+
+    // // admob:
+    // implementation 'com.google.android.gms:play-services-ads:19.0.1'
+    // implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+	// // applovin:
+    // implementation 'com.applovin:applovin-sdk:9.11.1'
+
+	// // chartboost:
+    // implementation 'com.chartboost:chartboost-sdk:8.0.1'
+
+	// // facebook audience network:
+    // implementation 'com.facebook.android:audience-network-sdk:5.8.0'
+
+	// // ironsource:
+    // implementation 'com.ironsource.sdk:mediationsdk:6.16.0'
+
+    // // mintegral:
+    // def mintegralVersion = '13.0.01'
+    // implementation "com.mintegral.msdk:videojs:$mintegralVersion"
+    // implementation "com.mintegral.msdk:common:$mintegralVersion"
+    // implementation "com.mintegral.msdk:mtgjscommon:$mintegralVersion"
+    // implementation "com.mintegral.msdk:playercommon:$mintegralVersion"
+    // implementation "com.mintegral.msdk:reward:$mintegralVersion"
+    // implementation "com.mintegral.msdk:videocommon:$mintegralVersion"
+    // implementation "com.mintegral.msdk:interstitial:$mintegralVersion"
+    // implementation "com.mintegral.msdk:interstitialvideo:$mintegralVersion"
+    // implementation "com.mintegral.msdk:interactiveads:$mintegralVersion"
+    // implementation "com.mintegral.msdk:mtgbid:$mintegralVersion"
+
+	// // tapjoy:
+    // implementation 'com.tapjoy:tapjoy-android-sdk:12.4.2'
+
+	// // unity:
+    // implementation 'com.unity3d.ads:unity-ads:3.4.0'
+
+	// // vungle:
+    // implementation 'com.vungle:publisher-sdk-android:6.5.2'    
+    
+}
 
 android {
 	compileSdkVersion **APIVERSION**
@@ -39,6 +116,10 @@ android {
         }
 		versionCode	**VERSIONCODE**
 		versionName	'**VERSIONNAME**'
+
+    // uncomment the line below if you min SDK version is lower than 21 and you're integrating several neworks.
+    // This is due to Dalvik's method count limit per dex file being exceeded as you integrate more networks
+    // multiDexEnabled true
 	}
 
     compileOptions {
