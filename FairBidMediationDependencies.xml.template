@@ -6,6 +6,9 @@
     <repositories>
       <repository>https://repo.maven.apache.org/maven2</repository>
     </repositories>
+    <!-- Android MultiDex -->
+    <androidPackage spec="androidx.multidex:multidex:2.0.1">
+    </androidPackage>
     <!-- AdColony -->
     <androidPackage spec="com.adcolony:sdk:4.1.0">
       <repositories>
