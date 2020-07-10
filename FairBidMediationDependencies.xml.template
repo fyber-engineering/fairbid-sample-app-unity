@@ -1,0 +1,178 @@
+<dependencies>
+  <!-- Android dependencies are specified under the "androidPackages" element.
+       Each "androidPackage" element contains the attributes of an Android
+       dependency (e.g AAR, JAR reference). -->
+  <androidPackages>
+    <repositories>
+      <repository>https://repo.maven.apache.org/maven2</repository>
+    </repositories>
+    <!-- AdColony -->
+    <androidPackage spec="com.adcolony:sdk:4.1.0">
+      <repositories>
+        <repository>https://adcolony.bintray.com/AdColony</repository>
+      </repositories>
+    </androidPackage>
+    <!-- Admob -->
+    <androidPackage spec="com.google.android.gms:play-services-ads:19.0.1">
+      <androidSdkPackageIds>
+        <androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
+      </androidSdkPackageIds>
+      <repositories>
+        <repository>https://maven.google.com</repository>
+      </repositories>
+    </androidPackage>
+    <androidPackage spec="com.google.android.gms:play-services-location:16.0.0">
+      <androidSdkPackageIds>
+        <androidSdkPackageId>extra-google-m2repository</androidSdkPackageId>
+      </androidSdkPackageIds>
+      <repositories>
+        <repository>https://maven.google.com</repository>
+      </repositories>
+    </androidPackage>
+    <!-- AppLovin -->
+    <androidPackage spec="com.applovin:applovin-sdk:9.11.1">
+    </androidPackage>
+    <!-- Chartboost -->
+    <androidPackage spec="com.chartboost:chartboost-sdk:8.0.1">
+      <repositories>
+        <repository>https://chartboostmobile.bintray.com/Chartboost</repository>
+      </repositories>
+    </androidPackage>
+    <!-- Facebook Aduience Network -->
+    <androidPackage spec="com.facebook.android:audience-network-sdk:5.9.0">
+    </androidPackage>
+    <!-- ironSource -->
+    <androidPackage spec="com.ironsource.sdk:mediationsdk:6.16.0">
+      <repositories>
+        <repository>https://dl.bintray.com/ironsource-mobile/android-sdk</repository>
+      </repositories>
+    </androidPackage>
+    <!-- Mintegral -->
+    <androidPackage spec="com.mintegral.msdk:videojs:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:common:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:mtgjscommon:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:playercommon:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:reward:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:videocommon:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:interstitial:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:interstitialvideo:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:interactiveads:13.0.01">
+    </androidPackage>
+    <androidPackage spec="com.mintegral.msdk:mtgbid:13.0.01">
+    </androidPackage>
+    <!-- Tapjoy -->
+    <androidPackage spec="com.tapjoy:tapjoy-android-sdk:12.4.2">
+      <repositories>
+        <repository>https://tapjoy.bintray.com/maven</repository>
+      </repositories>
+    </androidPackage>
+    <!-- Unity -->
+    <androidPackage spec="com.unity3d.ads:unity-ads:3.4.0">
+      <repositories>
+        <repository>https://dl.bintray.com/unityads/UnityAds</repository>
+      </repositories>
+    </androidPackage>
+    <!-- Verizon -->
+    <androidPackage spec="com.verizon.ads:android-vas-standard-edition:1.5.0">
+    </androidPackage>
+    <!-- Vungle -->
+    <androidPackage spec="com.vungle:publisher-sdk-android:6.5.2">
+    </androidPackage>
+  </androidPackages>
+
+  <!-- iOS Cocoapod dependencies can be specified by each iosPod element. -->
+  <iosPods>
+    <sources>
+      <source>https://cocoapods.mycompany.com/Specs</source>
+    </sources>
+    <!-- AdColony -->
+    <iosPod name="AdColony" path="../adColony" version="~> 4.1.2" bitcodeEnabled="true" minTargetSdk="8.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- AdMob -->
+    <iosPod name="Google-Mobile-Ads-SDK" path="../google-mobile-ads-sdk" version="~> 7.60.0" bitcodeEnabled="true" minTargetSdk="8.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- AppLovin -->
+    <iosPod name="AppLovinSDK" path="../appLovinsdk" version="~> 6.12.8" bitcodeEnabled="true" minTargetSdk="9.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Chartboost -->
+    <iosPod name="ChartboostSDK" path="../chartboostsdk" version="~> 8.1.0" bitcodeEnabled="true">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Facebook Audience Network -->
+    <iosPod name="FBAudienceNetwork" path="../fbaudiencenetwork" version="~> 5.9.0" bitcodeEnabled="true" minTargetSdk="9.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Ironsource -->
+    <iosPod name="IronSourceSDK" path="../ironsourcesdk" version="~> 6.16.0.0" bitcodeEnabled="true">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Mintegral -->
+    <iosPod name="MintegralAdSDK" path="../mintegraladsdk" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <iosPod name="MintegralAdSDK/RewardVideoAd" path="../mintegraladsdk/rewardvideoad" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <iosPod name="MintegralAdSDK/InterstitialVideoAd" path="../mintegraladsdk/interstitialvideoad" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <iosPod name="MintegralAdSDK/BidInterstitialVideoAd" path="../mintegraladsdk/bidinterstitialvideoad" version="~> 6.1.0.0" bitcodeEnabled="true" minTargetSdk="8.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Tapjoysdk -->
+    <iosPod name="TapjoySDK" path="../tapjoysdk" version="~> 12.4.2" bitcodeEnabled="true">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Unity -->
+    <iosPod name="UnityAds" path="../unityads" version="~> 3.4.2" bitcodeEnabled="true" minTargetSdk="9.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Verizon -->
+    <iosPod name="Verizon-Ads-StandardEdition" path="../verizon-ads-standard-edition" version="~> 1.5.0" bitcodeEnabled="true" minTargetSdk="8.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+    <!-- Vungle -->
+    <iosPod name="VungleSDK-iOS" path="../vunglesdk-ios" version="~> 6.5.2" bitcodeEnabled="true" minTargetSdk="9.0">
+      <sources>
+        <source>https://github.com/CocoaPods/Specs</source>
+      </sources>
+    </iosPod>
+  </iosPods>
+</dependencies>
