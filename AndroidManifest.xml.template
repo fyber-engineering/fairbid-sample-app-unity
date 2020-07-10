@@ -50,6 +50,10 @@
         <meta-data
             android:name="com.google.android.gms.ads.AD_MANAGER_APP"
             android:value="true"/>
+        <!-- AdMob’s SDK requires publishers to add their AdMob App ID to the app’s AndroidManifest as a child of the tag: -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-xxxxxxxxxxxxxxxx~yyyyyyyyyy"/>
 
         <!-- Some mediated networks do not include a manifest with activities declarations within the aar they distribute -->
 
