@@ -15,10 +15,14 @@ Table of contents
 * [Navigating the sample code](#navigating-the-sample-code)
 * [Mediation](#mediation)
     * [Android](#android)
+        * [Using External Dependency Manager for Unity - Android](#using-external-dependency-manager-for-unity---android)
+        * [Using Gradle](#using-gradle)
         * [Additional step - Android Manifest](#additional-step---android-manifest)
     * [iOS](#ios)
+        * [Using External Dependency Manager for Unity - iOS](#using-external-dependency-manager-for-unity---ios)
+        * [Using Cocoapods](#using-cocoapods)
         * [Additional step - Info.plist](#additional-step---info.plist)
-* [Test Suite](#test-suite)
+    * [Test Suite](#test-suite)
 * [Support and documentation](#support-and-documentation)
 
 ### Prerequisites
@@ -68,9 +72,31 @@ This project does not have any mediated network integrated in it. In order to in
 
 1. You need to add the 3rd party mediation network configuration from their dashboard to the Fyber's console. Refer to the section [Integrating Mediation Partners
 ](https://fyber-mediation.fyber.com/docs/integrating-mediation) in Fyber's dev portal for instructions.
-2. After you have added the 3rd party mediation network configuration. Follow the platform specific instructions below,
+2. After you have added the 3rd party mediation network configuration. You can integrate 3rd party networks in the project in two different approaches in both platforms (Android and iOS).
+
+    - Using External Dependency Manager for Unity
+    - Using Gradle and Cocoapods
+
+ Follow the platform specific instructions below for the both approaches,
 
 ### Android
+
+#### Using External Dependency Manager for Unity - Android
+
+Follow the instructions for the section **Download the and import EDM4U** in [Fyber's dev portal](https://dev-unity.fyber.com/docs/integration) to download the External Dependency Manager for Unity(EDM4U).
+
+After you have downloaded and imported the EDM4U in this project. You need to create a empty file with name - "FairBidMediationDependencies.xml" in the folder `Assets/Editor`. For more instructions follow the section "Declare mediated networks dependencies with EDM4U" in [Fyber's dev portal](https://dev-unity.fyber.com/docs/integration).
+
+Navigate to the file [FairBidMediationDependencies.xml.template](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/FairBidMediationDependencies.xml.template) located in the root folder and and copy the commented out dependencies block for the networks you wish to integrate. Paste those dependencies block of networks in the file - "FairBidMediationDependencies.xml" in the folder `Assets/Editor`.
+
+After completing the copy and parting of the dependenies block of networks. You need to run the dependency resolution by clicking on the menu `Assets > External Dependency Manager > Android Resolver > Resolve`. This will resolve the dependenies.
+
+**Note:** If you have integrated several mediated networks in this project you need to uncommented the multidex entry in the file [mainTemplate.gradle](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Plugins/Android/mainTemplate.gradle)
+```gradle
+        multiDexEnabled true
+```
+
+#### Using Gradle
 
 Navigate to the file [mainTemplate.gradle](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Plugins/Android/mainTemplate.gradle) located in the folder `Assets/Plugins/Android/` and uncomment the commented out dependencies block for the networks you wish to integrate.
 
@@ -95,6 +121,16 @@ Pay special attention to,
 **Tip:** You can copy AdMob's and Mintegral entries from the file [AndroidManifest.xml.template](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/AndroidManifest.xml.template)
 
 ### iOS
+
+#### Using External Dependency Manager for Unity - iOS
+
+Navigate to the file [FairBidMediationDependencies.xml.template](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/FairBidMediationDependencies.xml.template) located in the root folder and and copy the commented out dependencies block for the networks you wish to integrate. Paste those dependencies block of networks in the file - "FairBidMediationDependencies.xml" in the folder `Assets/Editor`.
+
+**Note:** If you don't have the file - "FairBidMediationDependencies.xml" in the folder `Assets/Editor`. Follow the instructions in the section "Declare mediated networks dependencies with EDM4U" in [Fyber's dev portal](https://dev-unity.fyber.com/docs/integration).
+
+After completing the copy and parting of the dependenies block of networks. You need to run the dependency resolution by clicking on the menu `Assets > External Dependency Manager > iOS Resolver > Resolve`. This will resolve the dependenies.
+
+#### Using Cocoapods
 
 To integrate mediated networks on iOS. First, you need to Build the project. Then, within the generated XCode project's path, create a `Podfile`. 
 
@@ -123,7 +159,7 @@ In case you're integrating **AdMob** you'll need to add the following `Info.plis
 
 Check our [dev portal](https://fyber-mediation.fyber.com/docs/admob#infoplist) for more information
 
-## Test Suite
+### Test Suite
 
 Regardless of the platform you're running the sample on, you can always use the Test Suite to double check all the mediated networks were integrated successfully.
 
