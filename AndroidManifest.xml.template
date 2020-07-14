@@ -14,21 +14,21 @@
 
     <!-- Some mediated networks do not include a manifest with permissions declaration within the aar they distribute. -->
 
-    <!-- The permissions below are required by some of mediated networks. Though they might still work without them, it is not guaranteed -->
+    <!-- The permissions below are required by some of mediated networks. Though they might still work without them, but it is not guaranteed -->
 
     <!-- Required by all mediation networks -->
     <uses-permission android:name="android.permission.INTERNET"/>
-    <!-- Required by AdColony, AppLovin, (and optionally by FairBid 2) -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <!-- Required by all mediation networks -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
 
     <!-- Optional permissions. We can leave these permissions out. However, adding them to your project will probably improve ad delivery experience -->
 
     <!-- Recommended optional permissions required by FairBid 2. -->
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!-- Recommended optional permissions required by FairBid 2. -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <application
         android:icon="@mipmap/app_icon"
