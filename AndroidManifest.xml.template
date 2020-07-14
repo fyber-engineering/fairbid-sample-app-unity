@@ -20,7 +20,7 @@
     <uses-permission android:name="android.permission.INTERNET"/>
     <!-- Required by AdColony, AppLovin, (and optionally by FairBid 2) -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <!-- Required by AdColony, AdMob, AppLovin, Facebook Audience Network, Tapjoy, UnityAds, Vungle, and ironSource -->
+    <!-- Required by all mediation networks -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
 
