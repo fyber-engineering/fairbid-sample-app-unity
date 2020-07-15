@@ -6,7 +6,7 @@ buildscript {
 	}
 
 	dependencies {
-		classpath 'com.android.tools.build:gradle:3.3.1'
+		classpath 'com.android.tools.build:gradle:3.2.0'
 	}
 }
 
@@ -24,8 +24,7 @@ apply plugin: 'com.android.application'
 
 dependencies {
 	implementation fileTree(dir: 'libs', include: ['*.jar'])
-**DEPS**
-}
+**DEPS**}
 
 android {
 	compileSdkVersion **APIVERSION**
@@ -40,10 +39,6 @@ android {
         }
 		versionCode	**VERSIONCODE**
 		versionName	'**VERSIONNAME**'
-
-    // uncomment the line below if you min SDK version is lower than 21 and you're integrating several neworks.
-    // This is due to Dalvik's method count limit per dex file being exceeded as you integrate more networks
-    // multiDexEnabled true
 	}
 
     compileOptions {
