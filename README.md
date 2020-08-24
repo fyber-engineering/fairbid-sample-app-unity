@@ -61,8 +61,8 @@ If you want to test mediation features using this Sample app, there are a couple
 ](https://fyber-mediation.fyber.com/docs/integrating-mediation) in Fyber's dev portal for instructions.
 2. Integrate 3rd party networks in the project. Go to the [mediation network table](https://fyber-mediation.fyber.com/docs/supported-networks#platform-unity) and select the network you wish to integrate in the sample app. Then follow the instructions respective to the integration approach you choose. There are two different approaches to achieve this:.
 
-   - [Using External Dependency Manager for Unity](https://fyber-mediation.fyber.com/docs/supported-networks#platform-unity)
-   - [Using Gradle and Cocoapods](https://fyber-mediation.fyber.com/docs/supported-networks#platform-unity)
+   - [Using External Dependency Manager for Unity](https://fyber-mediation.fyber.com/docs/supported-networks#step-2-alternative-2-external-dependency-manager-for-unity-edm4u)
+   - [Using Gradle and Cocoapods](https://fyber-mediation.fyber.com/docs/supported-networks#step-2-alternative-1-maven--cocoapods)
 
 ### Test Suite
 
