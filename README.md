@@ -47,13 +47,14 @@ You're now ready to run this project. Click `File -> Build and Run`. Unity will 
 ## Navigating the project code
 
 In the folder `Assets/Scenes/`, we have the following scenes:
-* [MainScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/MainScene.cs) - SDK is Initialized
-
-* [BannerScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/BannerScene.cs) - Requesting Banner Ads
-  
-* [InterstitialScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/InterstitialScene.cs) - Requesting Interstitial Ads
-
-* [RewardedScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/RewardedScene.cs) - Requesting Rewarded Ads
+* SDK Initialization is located in [MainScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/MainScene.cs)
+   * Appid is defined in line 33 of [MainScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/MainScene.cs)
+* Requesting Banner Ads - [BannerScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/BannerScene.cs)
+   * Placement id for Banner Ads is defined in line 31 [BannerScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/BannerScene.cs)
+* Requesting Interstitial Ads - [InterstitialScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/InterstitialScene.cs)
+   * Placement id for Interstitial Ads is defined in line 31 [InterstitialScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/InterstitialScene.cs)
+* Requesting Rewarded Ads - [RewardedScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/RewardedScene.cs)
+   * Placement id for Rewarded Ads is defined in line 31 [RewardedScene](https://github.com/Heyzap/fairbid-sample-app-unity/blob/master/Assets/Scenes/RewardedScene.cs)
 
 ## Mediation
 
