@@ -27,18 +27,14 @@ Table of contents
 
 ### Importing FairBid Unity Plugin
 
-Before building the project, you need to import the FaidBid Unity Plugin. For this, you need to download FairBid Unity Plugin from [Fyber's dev portal](https://dev-unity.fyber.com/docs/integration).
+Before building the project, you need to import the FaidBid Unity Plugin. For this, you need to download FairBid Unity Plugin from [Fyber's dev portal](https://developer.fyber.com/hc/en-us/articles/360010151157-Unity-SDK-Integration).
 
 With this project open in Unity, double-click the downloaded FairBid Unity Plugin package (FairBidSDK.unitypackage) file to import the FairBid Unity Plugin. When the Import Unity Package window opens, click All to select everything before importing.
 
 #### Set the target platform in Build Settings
 
-After the import is completed. You need to select the target platform (Android/iOS) you wish to run this project on and click on `File -> Build Settings`.
-
-#### Platform specific setup
-
-- [Android specific setups instructions](https://dev-unity.fyber.com/docs/unity-sdk-integration-new-draft#android-specific-setup)
-- [iOS specific setups instructions](https://dev-unity.fyber.com/docs/unity-sdk-integration-new-draft#ios-specific-setup)
+After the import is completed, you need to select the target platform (Android/iOS) you wish to run this project on and click on `File -> Build Settings`.
+Follow the [platform specific setup in our dev portal](https://developer.fyber.com/hc/en-us/articles/360010151157-Unity-SDK-Integration) 
 
 ## Build and Run
 
@@ -61,11 +57,11 @@ In the folder `Assets/Scenes/`, we have the following scenes:
 If you want to test mediation features using this Sample app, there are a couple of steps you will need to take first: 
 
 1. Add the 3rd party mediation network configuration from their dashboard to the Fyber's console. Refer to the section [Integrating Mediation Partners
-](https://fyber-mediation.fyber.com/docs/integrating-mediation) in Fyber's dev portal for instructions.
-2. Integrate 3rd party networks in the project. Go to the [mediation network table](https://fyber-mediation.fyber.com/docs/supported-networks#platform-unity) and select the network you wish to integrate in the sample app. Then follow the instructions respective to the integration approach you choose. There are two different approaches to achieve this:.
+](https://developer.fyber.com/hc/en-us/articles/360010169358-Integrating-Mediation-Partners) in Fyber's dev portal for instructions.
+2. Integrate 3rd party networks in the project. Go to the [mediation network table](https://developer.fyber.com/hc/en-us/articles/360010077777-Supported-Networks#platform-unity) and select the network you wish to integrate in the sample app. Then follow the instructions respective to the integration approach you choose. There are two different approaches to achieve this:.
 
-   - [Using External Dependency Manager for Unity](https://fyber-mediation.fyber.com/docs/supported-networks#step-2-alternative-2-external-dependency-manager-for-unity-edm4u)
-   - [Using Gradle and Cocoapods](https://fyber-mediation.fyber.com/docs/supported-networks#step-2-alternative-1-maven--cocoapods)
+   - Using External Dependency Manager for Unity
+   - Using Gradle and Cocoapods
 
 ### Test Suite
 
@@ -73,7 +69,7 @@ Regardless of the platform you're running the sample on, you can always use the 
 
 
 #### Support and documentation
-Please visit our [documentation](https://dev-unity.fyber.com/docs)
+Please visit our [documentation](https://developer.fyber.com/hc/en-us/articles/360010151157-Unity-SDK-Integration)
 
 #### Project License
 
