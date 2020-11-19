@@ -42,9 +42,9 @@ android {
         versionCode	**VERSIONCODE**
         versionName	'**VERSIONNAME**'
 
-    // uncomment the line below if you min SDK version is lower than 21 and you're integrating several neworks.
-    // This is due to Dalvik's method count limit per dex file being exceeded as you integrate more networks
-    // multiDexEnabled true
+        // This setting is enabled by default if your min SDK version is greater or equal than 21
+        // This is due to Dalvik's method count limit per dex file being exceeded as you integrate more networks
+        multiDexEnabled true
     }
 
     compileOptions {
