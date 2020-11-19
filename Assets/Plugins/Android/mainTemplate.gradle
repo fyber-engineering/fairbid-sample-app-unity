@@ -28,6 +28,8 @@ dependencies {
 **DEPS**
 }
 
+project.ext.set('android.enableR8', true)
+
 android {
     compileSdkVersion **APIVERSION**
     buildToolsVersion '**BUILDTOOLS**'
