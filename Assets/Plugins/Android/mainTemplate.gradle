@@ -23,7 +23,7 @@ apply plugin: 'com.android.application'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.4.32'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.10'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
 **DEPS**
 }
