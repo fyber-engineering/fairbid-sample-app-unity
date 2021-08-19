@@ -3,11 +3,13 @@
     {
       "name": "npmjs",
       "url": "https://registry.npmjs.org/",
-      "scopes": ["com.fyber.fairbid.unity"]
+      "scopes": [
+        "com.fyber.fairbid.unity"
+      ]
     }
   ],
   "dependencies": {
-    "com.fyber.fairbid.unity": "3.18.0-p1",
+    "com.fyber.fairbid.unity": "3.18.0-p2",
     "com.unity.ads": "2.0.8",
     "com.unity.analytics": "3.2.3",
     "com.unity.collab-proxy": "1.2.15",
