@@ -23,7 +23,7 @@ allprojects {
 apply plugin: 'com.android.application'
 
 dependencies {
-    implementation 'com.fyber:fairbid-sdk:3.18.0'
+    implementation 'com.fyber:fairbid-sdk:3.19.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.10'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
