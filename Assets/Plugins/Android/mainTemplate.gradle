@@ -1,11 +1,12 @@
 buildscript {
     repositories {
+        mavenCentral()
         google()
-        jcenter()
     }
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.3'
+        classpath 'com.fyber:fairbid-sdk-plugin:3.23.0'
     }
 }
 
@@ -13,7 +14,6 @@ allprojects {
     repositories {
         mavenCentral()
         google()
-        jcenter()
         flatDir {
             dirs 'libs'
         }
@@ -21,12 +21,12 @@ allprojects {
 }
 
 apply plugin: 'com.android.application'
+apply plugin: 'com.fyber.fairbid-sdk-plugin'
 
 dependencies {
-    implementation 'com.fyber:fairbid-sdk:3.22.0'
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.5.10'
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.1.0'
 **DEPS**
 }
 
