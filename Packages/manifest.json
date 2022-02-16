@@ -9,8 +9,7 @@
     }
   ],
   "dependencies": {
-    "com.fyber.fairbid.unity": "3.23.1",
-    "com.unity.ads": "2.0.8",
+    "com.fyber.fairbid.unity": "3.24.0",
     "com.unity.analytics": "3.2.3",
     "com.unity.collab-proxy": "1.2.15",
     "com.unity.package-manager-ui": "2.0.13",
