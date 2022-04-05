@@ -1,54 +1,29 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        google()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.4.3'
-        classpath 'com.fyber:fairbid-sdk-plugin:3.26.0'
-    }
-}
-
-allprojects {
-    repositories {
-        mavenCentral()
-        google()
-        flatDir {
-            dirs 'libs'
-        }
-    }
-}
-
-apply plugin: 'com.android.application'
-apply plugin: 'com.fyber.fairbid-sdk-plugin'
-
-dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.1.0'
-**DEPS**
-}
-
-project.ext.set('android.enableR8', true)
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion **APIVERSION**
     buildToolsVersion '**BUILDTOOLS**'
+    aaptOptions {
+		noCompress = ['.ress', '.resource', '.obb']
+		ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+	}
+
+    compileSdkVersion 31
 
     defaultConfig {
-        minSdkVersion **MINSDKVERSION**
-        targetSdkVersion **TARGETSDKVERSION**
-        applicationId '**APPLICATIONID**'
-        ndk {
-            abiFilters **ABIFILTERS**
-        }
-        versionCode	**VERSIONCODE**
-        versionName	'**VERSIONNAME**'
+        minSdkVersion 16
+        targetSdkVersion 31
+
+        versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
+        versionName version
 
         // This setting is enabled by default if your min SDK version is greater or equal than 21
         // This is due to Dalvik's method count limit per dex file being exceeded as you integrate more networks
         multiDexEnabled true
+        
+        ndk {
+            abiFilters 'armeabi-v7a', 'x86'
+        }
     }
 
     compileOptions {
@@ -56,39 +31,14 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 
-    lintOptions {
-        abortOnError false
-    }
-
-    aaptOptions {
-        noCompress '.unity3d', '.ress', '.resource', '.obb'**STREAMING_ASSETS**
-    }
-
 **SIGN**
-    buildTypes {
-        debug {
-        minifyEnabled **MINIFY_DEBUG**
-        proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD**
-            jniDebuggable true
-        }
-        release {
-            minifyEnabled **MINIFY_RELEASE**
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-unity.txt'**USER_PROGUARD**
-  			**SIGNCONFIG**
-        }
-    }
-**PACKAGING_OPTIONS**
-    bundle {
-        language {
-            enableSplit = false
-        }
-        density {
-            enableSplit = false
-        }
-        abi {
-            enableSplit = true
-        }
-    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.1.0'
+**DEPS**
 }
 
 

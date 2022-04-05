@@ -20,7 +20,7 @@ Table of contents
 * [License](#license)
 
 ### Prerequisites
-* Unity Editor version 2018.* 
+* Unity Editor version 2019.* 
 * Android 4.1 (API level 16)+ (when building for Android)
 * iOS 9.0+ (when building for iOS)
 
