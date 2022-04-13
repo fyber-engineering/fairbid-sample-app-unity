@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.fyber.fairbid-sdk-plugin'
+
+android {
+    compileSdkVersion 31
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    defaultConfig {
+        applicationId '**APPLICATIONID**'
+        minSdkVersion 16
+        targetSdkVersion 31
+        versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
+        versionName version
+
+        multiDexEnabled = true
+
+        ndk {
+            abiFilters **ABIFILTERS**
+        }
+    }
+
+    aaptOptions {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb'**STREAMING_ASSETS**]
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }**SIGN**
+
+    buildTypes {
+        debug {
+            minifyEnabled **MINIFY_DEBUG**
+            useProguard **PROGUARD_DEBUG**
+            proguardFiles getDefaultProguardFile('proguard-android.txt')**SIGNCONFIG**
+            jniDebuggable true
+        }
+        release {
+            minifyEnabled **MINIFY_RELEASE**
+            useProguard **PROGUARD_RELEASE**
+            proguardFiles getDefaultProguardFile('proguard-android.txt')**SIGNCONFIG**
+        }
+    }**PACKAGING_OPTIONS****PLAY_ASSET_PACKS****SPLITS**
+**BUILT_APK_LOCATION**
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = false
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}**SPLITS_VERSION_CODE****LAUNCHER_SOURCE_BUILD_SETUP**
+
+dependencies {
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.1'
+    implementation 'com.google.android.gms:play-services-base:17.6.0'
+    implementation 'com.google.android.gms:play-services-appset:16.0.0'
+    
+    implementation project(':unityLibrary')
+    
+    **DEPS**
+}
