@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.fyber.fairbid-sdk-plugin'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -11,8 +11,8 @@ android {
 
     defaultConfig {
         applicationId '**APPLICATIONID**'
-        minSdkVersion 19
-        targetSdkVersion 30
+        minSdkVersion 16
+        targetSdkVersion 31
         versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
         versionName version
 
@@ -31,13 +31,13 @@ android {
     buildTypes {
         debug {
             minifyEnabled **MINIFY_DEBUG**
-            
+            useProguard **PROGUARD_DEBUG**
             proguardFiles getDefaultProguardFile('proguard-android.txt')**SIGNCONFIG**
             jniDebuggable true
         }
         release {
             minifyEnabled **MINIFY_RELEASE**
-            
+            useProguard **PROGUARD_RELEASE**
             proguardFiles getDefaultProguardFile('proguard-android.txt')**SIGNCONFIG**
         }
     }**PACKAGING_OPTIONS****PLAY_ASSET_PACKS****SPLITS**

@@ -1,18 +1,56 @@
+// Android Resolver Repos Start
+([rootProject] + (rootProject.subprojects as List)).each { project ->
+    project.repositories {
+        def unityProjectPath = $/file:///**DIR_UNITYPROJECT**/$.replace("\\", "/")
+        maven {
+            url "https://maven.google.com"
+        }
+        maven {
+            url "https://android-sdk.is.com/" // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:39
+        }
+        maven {
+            url "https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea" // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:45
+        }
+        maven {
+            url "https://maven.ogury.co" // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:61
+        }
+        maven {
+            url "https://artifact.bytedance.com/repository/pangle" // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:67
+        }
+        maven {
+            url "https://artifactory.verizonmedia.com/artifactory/maven/" // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:79
+        }
+        mavenLocal()
+        mavenCentral()
+    }
+}
+// Android Resolver Repos End
 apply plugin: 'com.android.library'
 
+// Android Resolver Exclusions Start
+android {
+  packagingOptions {
+      exclude ('/lib/arm64-v8a/*' + '*')
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
 android {
     compileSdkVersion **APIVERSION**
     buildToolsVersion '**BUILDTOOLS**'
     aaptOptions {
-		noCompress = ['.ress', '.resource', '.obb']
+		noCompress = ['.ress', '.resource', '.obb']  + unityStreamingAssets.tokenize(', ')
 		ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
 	}
 
-    compileSdkVersion 31
+    compileSdkVersion 30
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 31
+        minSdkVersion 19
+        targetSdkVersion 30
 
         versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
         versionName version
@@ -38,6 +76,45 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
     implementation 'com.google.android.gms:play-services-ads-identifier:17.1.0'
+// Android Resolver Dependencies Start
+    implementation 'androidx.appcompat:appcompat:1.0.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:14
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:16
+    implementation 'androidx.exifinterface:exifinterface:1.1.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:8
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0+' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:7
+    implementation 'androidx.lifecycle:lifecycle-common:2.0.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:13
+    implementation 'androidx.media:media:1.0.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:15
+    implementation 'co.ogury:ogury-sdk:5.0.10' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:61
+    implementation 'com.adcolony:sdk:4.6.5' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:21
+    implementation 'com.android.support:multidex:1.0.3' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:10
+    implementation 'com.applovin:applovin-sdk:10.3.5' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:25
+    implementation 'com.chartboost:chartboost-sdk:8.3.1' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:27
+    implementation 'com.facebook.android:audience-network-sdk:6.8.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:29
+    implementation 'com.fyber:fairbid-sdk:3.24.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:12
+    implementation 'com.google.android.exoplayer:exoplayer-core:2.11.3' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:18
+    implementation 'com.google.android.gms:play-services-ads:20.5.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:23
+    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:11
+    implementation 'com.hyprmx.android:HyprMX-SDK:6.0.1' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:31
+    implementation 'com.inmobi.monetization:inmobi-ads:10.0.1' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:33
+    implementation 'com.ironsource.sdk:mediationsdk:7.1.5.1' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:39
+    implementation 'com.mbridge.msdk.oversea:interstitial:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:51
+    implementation 'com.mbridge.msdk.oversea:interstitialvideo:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:52
+    implementation 'com.mbridge.msdk.oversea:mbbid:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:53
+    implementation 'com.mbridge.msdk.oversea:mbjscommon:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:46
+    implementation 'com.mbridge.msdk.oversea:playercommon:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:47
+    implementation 'com.mbridge.msdk.oversea:reward:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:48
+    implementation 'com.mbridge.msdk.oversea:same:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:50
+    implementation 'com.mbridge.msdk.oversea:videocommon:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:49
+    implementation 'com.mbridge.msdk.oversea:videojs:16.0.11' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:45
+    implementation 'com.my.target:mytarget-sdk:5.15.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:55
+    implementation 'com.pangle.global:ads-sdk:4.1.1.9' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:67
+    implementation 'com.snap.adkit:adkit:1.2.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:69
+    implementation 'com.squareup.okhttp3:okhttp:3.9.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:17
+    implementation 'com.squareup.picasso:picasso:2.71828' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:19
+    implementation 'com.unity3d.ads:unity-ads:4.0.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:71
+    implementation 'com.verizon.ads:android-vas-standard-edition:1.14.0' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:79
+    implementation 'com.vungle:publisher-sdk-android:6.10.3' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:73
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.3.72' // Assets/ExternalDependencyManager/Editor/UTDependencies.xml:9
+// Android Resolver Dependencies End
 **DEPS**
 }
 

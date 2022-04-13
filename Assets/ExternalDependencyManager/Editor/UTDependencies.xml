@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--DO NOT MODIFY HERE. AUTO GENERATED DEPENDENCIES FROM UTLibraryDependencies.cs.-->
+<dependencies>
+	<!--Android Package dependencies-->
+	<androidPackages>
+		<!--Dependency added for using Support Libraries-->
+		<androidPackage spec="androidx.legacy:legacy-support-v4:1.0.0+" />
+		<androidPackage spec="androidx.exifinterface:exifinterface:1.1.0" />
+		<androidPackage spec="org.jetbrains.kotlin:kotlin-stdlib:1.3.72" />
+		<androidPackage spec="com.android.support:multidex:1.0.3" />
+		<androidPackage spec="com.google.android.gms:play-services-ads-identifier:17.0.0" />
+		<androidPackage spec="com.fyber:fairbid-sdk:3.24.0" />
+		<androidPackage spec="androidx.lifecycle:lifecycle-common:2.0.0" />
+		<androidPackage spec="androidx.appcompat:appcompat:1.0.0" />
+		<androidPackage spec="androidx.media:media:1.0.0" />
+		<androidPackage spec="androidx.constraintlayout:constraintlayout:1.1.3" />
+		<androidPackage spec="com.squareup.okhttp3:okhttp:3.9.0" />
+		<androidPackage spec="com.google.android.exoplayer:exoplayer-core:2.11.3" />
+		<androidPackage spec="com.squareup.picasso:picasso:2.71828" />
+		<!--AdColony-->
+		<androidPackage spec="com.adcolony:sdk:4.6.5" />
+		<!--Admob-->
+		<androidPackage spec="com.google.android.gms:play-services-ads:20.5.0" />
+		<!--AppLovin-->
+		<androidPackage spec="com.applovin:applovin-sdk:10.3.5" />
+		<!--Chartboost-->
+		<androidPackage spec="com.chartboost:chartboost-sdk:8.3.1" />
+		<!--Facebook-->
+		<androidPackage spec="com.facebook.android:audience-network-sdk:6.8.0" />
+		<!--HyprMX-->
+		<androidPackage spec="com.hyprmx.android:HyprMX-SDK:6.0.1" />
+		<!--InMobi-->
+		<androidPackage spec="com.inmobi.monetization:inmobi-ads:10.0.1" />
+		<!--IronSource-->
+		<androidPackage spec="com.ironsource.sdk:mediationsdk:7.1.5.1">
+			<repositories>
+				<repository>https://android-sdk.is.com/</repository>
+			</repositories>
+		</androidPackage>
+		<!--Mintegral-->
+		<androidPackage spec="com.mbridge.msdk.oversea:videojs:16.0.11">
+			<repositories>
+				<repository>https://dl-maven-android.mintegral.com/repository/mbridge_android_sdk_oversea</repository>
+			</repositories>
+		</androidPackage>
+		<androidPackage spec="com.mbridge.msdk.oversea:mbjscommon:16.0.11" />
+		<androidPackage spec="com.mbridge.msdk.oversea:playercommon:16.0.11" />
+		<androidPackage spec="com.mbridge.msdk.oversea:reward:16.0.11" />
+		<androidPackage spec="com.mbridge.msdk.oversea:videocommon:16.0.11" />
+		<androidPackage spec="com.mbridge.msdk.oversea:same:16.0.11" />
+		<androidPackage spec="com.mbridge.msdk.oversea:interstitial:16.0.11" />
+		<androidPackage spec="com.mbridge.msdk.oversea:interstitialvideo:16.0.11" />
+		<androidPackage spec="com.mbridge.msdk.oversea:mbbid:16.0.11" />
+		<!--MyTarget-->
+		<androidPackage spec="com.my.target:mytarget-sdk:5.15.0" />
+		<!--Ogury-->
+		<androidPackage spec="co.ogury:ogury-sdk:5.0.10">
+			<repositories>
+				<repository>https://maven.ogury.co</repository>
+			</repositories>
+		</androidPackage>
+		<!--Pangle-->
+		<androidPackage spec="com.pangle.global:ads-sdk:4.1.1.9">
+			<repositories>
+				<repository>https://artifact.bytedance.com/repository/pangle</repository>
+			</repositories>
+		</androidPackage>
+		<!--Snap-->
+		<androidPackage spec="com.snap.adkit:adkit:1.2.0" />
+		<!--Unity Ads-->
+		<androidPackage spec="com.unity3d.ads:unity-ads:4.0.0" />
+		<!--Vungle-->
+		<androidPackage spec="com.vungle:publisher-sdk-android:6.10.3" />
+		<!--Yahoo-->
+		<androidPackage spec="com.verizon.ads:android-vas-standard-edition:1.14.0">
+			<repositories>
+				<repository>https://artifactory.verizonmedia.com/artifactory/maven/</repository>
+			</repositories>
+		</androidPackage>
+	</androidPackages>
+	<!--iOS Cocoapod dependencies-->
+	<iosPods>
+		<!--FyberSDK-->
+		<iosPod name="FairBidSDK" version="3.24.0" bitcodeEnabled="true" />
+		<!--AdColony-->
+		<iosPod name="AdColony" version="4.7.2" bitcodeEnabled="true" />
+		<!--Admob-->
+		<iosPod name="Google-Mobile-Ads-SDK" version="8.13.0" bitcodeEnabled="true" />
+		<!--AppLovin-->
+		<iosPod name="AppLovinSDK" version="11.0.0" bitcodeEnabled="true" />
+		<!--Chartboost-->
+		<iosPod name="ChartboostSDK" version="8.5.0.2" bitcodeEnabled="true" />
+		<!--Meta-->
+		<iosPod name="FBAudienceNetwork" version="6.8.0" bitcodeEnabled="true" />
+		<!--HyprMX-->
+		<iosPod name="HyprMX" version="6.0.1" bitcodeEnabled="true" />
+		<!--InMobi-->
+		<iosPod name="InMobiSDK" version="10.0.1" bitcodeEnabled="true" />
+		<!--IronSource-->
+		<iosPod name="IronSourceSDK" version="7.1.14.0" bitcodeEnabled="true" />
+		<!--Mintegral-->
+		<iosPod name="MintegralAdSDK" version="7.1.0.0" bitcodeEnabled="true" />
+		<iosPod name="MintegralAdSDK/RewardVideoAd" version="7.1.0.0" bitcodeEnabled="true" />
+		<iosPod name="MintegralAdSDK/BidRewardVideoAd" version="7.1.0.0" bitcodeEnabled="true" />
+		<iosPod name="MintegralAdSDK/InterstitialVideoAd" version="7.1.0.0" bitcodeEnabled="true" />
+		<iosPod name="MintegralAdSDK/BidInterstitialVideoAd" version="7.1.0.0" bitcodeEnabled="true" />
+		<!--MyTarget-->
+		<iosPod name="myTargetSDK" version="5.14.4" bitcodeEnabled="true" />
+		<!--Ogury-->
+		<iosPod name="OgurySdk" version="1.5.1" bitcodeEnabled="true" />
+		<!--Pangle-->
+		<iosPod name="Ads-Global" version="4.2.0.4" bitcodeEnabled="true" />
+		<!--Snap-->
+		<iosPod name="SAKSDK" version="1.0.7" bitcodeEnabled="true" />
+		<!--Unity Ads-->
+		<iosPod name="UnityAds" version="4.0.0" bitcodeEnabled="true" />
+		<!--Yahoo Ads-->
+		<iosPod name="Verizon-Ads-StandardEdition" version="1.14.2" bitcodeEnabled="true" />
+		<!--Vungle-->
+		<iosPod name="VungleSDK-iOS" version="6.10.3" bitcodeEnabled="true" />
+	</iosPods>
+</dependencies>
