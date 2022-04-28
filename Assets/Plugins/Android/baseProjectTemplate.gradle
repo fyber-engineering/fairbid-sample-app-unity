@@ -7,7 +7,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.3'
-        classpath 'com.fyber:fairbid-sdk-plugin:3.26.0'
+        classpath 'com.fyber:fairbid-sdk-plugin:3.26.1'
         **BUILD_SCRIPT_DEPS**
     }
 }
