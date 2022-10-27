@@ -1,15 +1,5 @@
 {
-  "scopedRegistries": [
-    {
-      "name": "npmjs",
-      "url": "https://registry.npmjs.org/",
-      "scopes": [
-        "com.fyber.fairbid.unity"
-      ]
-    }
-  ],
   "dependencies": {
-    "com.fyber.fairbid.unity": "3.32.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.collab-proxy": "1.14.16",
