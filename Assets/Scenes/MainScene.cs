@@ -69,7 +69,7 @@ public class MainScene : MonoBehaviour {
     /// </summary>
     private void setFairBidVersionTextView()
     {
-        Text fairbidTextViewVersion = transform.Find("Background/FyberVersionTV").GetComponent<Text>();
-        fairbidTextViewVersion.text = "FYBER FAIRBID " + FairBid.Version;
+        Text fairbidTextViewVersion = transform.Find("Background/DTVersionTV").GetComponent<Text>();
+        fairbidTextViewVersion.text = "DT FAIRBID " + FairBid.Version;
     }
 }
