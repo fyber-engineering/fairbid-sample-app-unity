@@ -9,7 +9,7 @@
     }
   ],
   "dependencies": {
-    "com.fyber.fairbid.unity": "3.35.0",
+    "com.fyber.fairbid.unity": "3.36.0",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.collab-proxy": "1.14.16",
