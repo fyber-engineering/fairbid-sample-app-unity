@@ -3,10 +3,6 @@ apply plugin: 'com.android.library'
 android {
     compileSdkVersion **APIVERSION**
     buildToolsVersion '**BUILDTOOLS**'
-    aaptOptions {
-		noCompress = ['.ress', '.resource', '.obb']
-		ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
-	}
 
     compileSdkVersion 31
 
@@ -26,6 +22,11 @@ android {
         }
     }
 
+	aaptOptions {
+		noCompress = ['.ress', '.resource', '.obb'] + unityStreamingAssets.tokenize(', ')
+		ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+	}
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -36,8 +37,8 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.6.10'
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.1.0'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.20'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
 **DEPS**
 }
 

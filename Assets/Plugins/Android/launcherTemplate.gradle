@@ -3,11 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 31
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
     defaultConfig {
         applicationId '**APPLICATIONID**'
         minSdkVersion 16
@@ -23,20 +18,17 @@ android {
     }
 
     aaptOptions {
-        noCompress = ['.unity3d', '.ress', '.resource', '.obb'**STREAMING_ASSETS**]
+        noCompress = ['.ress', '.resource', '.obb'] + unityStreamingAssets.tokenize(', ')
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
     }**SIGN**
 
     buildTypes {
         debug {
-            minifyEnabled **MINIFY_DEBUG**
-            useProguard **PROGUARD_DEBUG**
-            proguardFiles getDefaultProguardFile('proguard-android.txt')**SIGNCONFIG**
             jniDebuggable true
         }
         release {
             minifyEnabled **MINIFY_RELEASE**
-            useProguard **PROGUARD_RELEASE**
+            
             proguardFiles getDefaultProguardFile('proguard-android.txt')**SIGNCONFIG**
         }
     }**PACKAGING_OPTIONS****PLAY_ASSET_PACKS****SPLITS**
@@ -60,9 +52,9 @@ android {
 }**SPLITS_VERSION_CODE****LAUNCHER_SOURCE_BUILD_SETUP**
 
 dependencies {
-    implementation 'com.google.android.gms:play-services-ads-identifier:17.0.1'
-    implementation 'com.google.android.gms:play-services-base:17.6.0'
-    implementation 'com.google.android.gms:play-services-appset:16.0.0'
+    implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+    implementation 'com.google.android.gms:play-services-base:18.0.1'
+    implementation 'com.google.android.gms:play-services-appset:16.0.2'
     
     implementation project(':unityLibrary')
     
