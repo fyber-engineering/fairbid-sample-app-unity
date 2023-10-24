@@ -93,7 +93,8 @@ public class InterstitialScene : MonoBehaviour, InterstitialListener {
     /// This an example of Listening to FairBid Interstitial Callbacks and events.
     /// </summary>
     /// <param name="placementName">The Placement name.</param>
-    public void OnRequestStart(string placementName)
+    /// <param name="requestId">The request id.</param>
+    public void OnRequestStart(string placementName, string requestId)
     {
         mUserInterfaceWrapper.addLog("OnRequestStart()");
     }

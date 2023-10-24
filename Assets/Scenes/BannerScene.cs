@@ -102,7 +102,8 @@ public class BannerScene : MonoBehaviour, BannerListener {
     /// This an example of Listening to FairBid Banner Callbacks and events.
     /// </summary>
     /// <param name="placementName">The Placement name.</param>
-    public void OnRequestStart(string placementName)
+    /// <param name="requestId">The request id.</param>
+    public void OnRequestStart(string placementName, string requestId)
     {
         mUserInterfaceWrapper.addLog("OnRequestStart()");
     }
