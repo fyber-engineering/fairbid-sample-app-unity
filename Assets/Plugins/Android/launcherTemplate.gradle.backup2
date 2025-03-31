@@ -1,30 +1,26 @@
 apply plugin: 'com.android.application'
-apply from: 'setupSymbols.gradle'
-apply from: '../shared/keepUnitySymbols.gradle'
 
 android {
-    ndkVersion "**NDKVERSION**"
-    namespace "**NAMESPACE**"
-    ndkPath "**NDKPATH**"
-    compileSdk 33
+	namespace "**NAMESPACE**"
+	ndkPath "**NDKPATH**"
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId '**APPLICATIONID**'
-        minSdk 16
-        targetSdk 33
+        minSdkVersion 16
+        targetSdkVersion 31
         versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
         versionName version
 
         multiDexEnabled = true
 
         ndk {
-            debugSymbolLevel **DEBUGSYMBOLLEVEL**
             abiFilters **ABIFILTERS**
         }
     }
 
-    androidResources {
-    noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
+    aaptOptions {
+        noCompress = ['.ress', '.resource', '.obb'] + unityStreamingAssets.tokenize(', ')
         ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
     }**SIGN**
 
@@ -37,7 +33,7 @@ android {
             
             proguardFiles getDefaultProguardFile('proguard-android.txt')**SIGNCONFIG**
         }
-    }**PACKAGING****PLAY_ASSET_PACKS****SPLITS**
+    }**PACKAGING_OPTIONS****PLAY_ASSET_PACKS****SPLITS**
 **BUILT_APK_LOCATION**
     bundle {
         language {

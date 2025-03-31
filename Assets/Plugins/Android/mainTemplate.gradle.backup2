@@ -1,17 +1,15 @@
 apply plugin: 'com.android.library'
-apply from: '../shared/keepUnitySymbols.gradle'
 
 android {
-    ndkVersion "**NDKVERSION**"
-    namespace "com.unity3d.player"
-    ndkPath "**NDKPATH**"
+	namespace "com.unity3d.player"
+	ndkPath "**NDKPATH**"
     buildToolsVersion '**BUILDTOOLS**'
 
-    compileSdk 33
+    compileSdkVersion 31
 
     defaultConfig {
-        minSdk 16
-        targetSdk 33
+        minSdkVersion 16
+        targetSdkVersion 31
 
         versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
         versionName version
@@ -21,15 +19,14 @@ android {
         multiDexEnabled true
         
         ndk {
-            debugSymbolLevel **DEBUGSYMBOLLEVEL**
             abiFilters 'armeabi-v7a', 'x86'
         }
     }
 
-    androidResources {
-    noCompress = **BUILTIN_NOCOMPRESS** + unityStreamingAssets.tokenize(', ')
-        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
-    }
+	aaptOptions {
+		noCompress = ['.ress', '.resource', '.obb'] + unityStreamingAssets.tokenize(', ')
+		ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~"
+	}
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
