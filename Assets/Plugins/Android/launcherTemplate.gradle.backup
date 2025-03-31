@@ -1,8 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-	namespace "**NAMESPACE**"
-	ndkPath "**NDKPATH**"
     compileSdkVersion 31
 
     defaultConfig {

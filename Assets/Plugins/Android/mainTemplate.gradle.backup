@@ -1,8 +1,6 @@
 apply plugin: 'com.android.library'
 
 android {
-	namespace "com.unity3d.player"
-	ndkPath "**NDKPATH**"
     buildToolsVersion '**BUILDTOOLS**'
 
     compileSdkVersion 31
