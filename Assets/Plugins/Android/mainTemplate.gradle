@@ -38,6 +38,15 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.20'
     implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
+
+    implementation "com.inmobi.monetization:inmobi-ads-kotlin:10.8.0"
+    // implementation "com.google.android.gms:play-services-ads:23.6.0"
+
+    implementation "com.fyber:marketplace-sdk:8.3.6"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.25"
+    implementation "com.google.android.gms:play-services-ads-identifier:18.0.1"
+    implementation "com.iabtcf:iabtcf-decoder:2.0.10"
+    implementation "com.google.protobuf:protobuf-javalite:3.21.12"
 **DEPS**
 }
 

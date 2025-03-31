@@ -30,7 +30,7 @@ public class MainScene : MonoBehaviour {
     /// "109613" can be used a sample application.
     /// </summary>
     /// TODO replace with your own app id.
-    private const String PUBLISHER_APP_ID = "109613";
+    private const String PUBLISHER_APP_ID = "211501";
     
 
     /// <summary>
