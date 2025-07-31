@@ -5,8 +5,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:installLocation="preferExternal">
 
-    <uses-sdk tools:overrideLibrary="com.unity3d.ads" /> <!-- UnityAds starting on version 3.5.1 requires minimum API 19 - Overriding this entry allows you to still use minimum API 16 -->
-
+    <!-- Several networks FairBid mediates impose a min API higher than FairBid does. 
+    By declaring them within the 'overrideLibrary' you can still use a lower min API in your app.
+    FairBid will ensure, at runtime, that none of these networks will be started when running on a OS lower the minimum one required.-->
+    <uses-sdk tools:overrideLibrary="com.bytedance,
+                                     com.google.android.ads.consent,
+                                     com.google.android.gms.ads,
+                                     com.google.android.gms.ads.impl,
+                                     com.google.android.gms.common,
+                                     com.google.android.gms.tasks,
+                                     com.my.target,
+                                     com.my.tracker,
+                                     com.ogury.ad,
+                                     com.ogury.core,
+                                     com.ogury.sdk,
+                                     com.tiktok,
+                                     io.github.mytargetsdk,
+                                     net.pubnative.lite.sdk,
+                                     net.pubnative.lite.sdk.banner,
+                                     net.pubnative.lite.sdk.core,
+                                     net.pubnative.lite.sdk.interstitial,
+                                     net.pubnative.lite.sdk.logger,
+                                     net.pubnative.lite.sdk.nativeads,
+                                     net.pubnative.lite.sdk.reporting,
+                                     net.pubnative.lite.sdk.rewarded,
+                                     net.pubnative.lite.sdk.source.pnapi,
+                                     net.pubnative.lite.sdk.topicsapi,
+                                     net.pubnative.lite.sdk.viewability" />
     <supports-screens
         android:smallScreens="true"
         android:normalScreens="true"
