@@ -21,7 +21,7 @@ Table of contents
 
 ### Prerequisites
 * Unity Editor version 2020.* 
-* Android 4.1 (API level 16)+ (when building for Android)
+* Android 4.4 (API level 19)+ (when building for Android)
 * iOS 9.0+ (when building for iOS)
 
 *The app will work on unity versions <= 2022 but requires some adjustments to the build and resource files.
