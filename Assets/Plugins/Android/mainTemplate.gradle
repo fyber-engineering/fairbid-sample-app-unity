@@ -1,13 +1,15 @@
 apply plugin: 'com.android.library'
 
 android {
+	namespace "com.unity3d.player"
+	ndkPath "**NDKPATH**"
     buildToolsVersion '**BUILDTOOLS**'
 
-    compileSdkVersion 31
+    compileSdkVersion 35
 
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 31
+        targetSdkVersion 35
 
         versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
         versionName version
@@ -36,7 +38,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.20'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.1.0'
     implementation 'com.google.android.gms:play-services-ads-identifier:18.0.1'
 **DEPS**
 }
