@@ -45,3 +45,5 @@ dependencies {
 
 
 **SOURCE_BUILD_SETUP**
+**IL_CPP_BUILD_SETUP**
+**EXTERNAL_SOURCES**
