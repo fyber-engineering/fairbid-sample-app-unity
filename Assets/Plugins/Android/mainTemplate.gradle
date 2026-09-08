@@ -8,7 +8,7 @@ android {
     compileSdkVersion 35
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 23
         targetSdkVersion 35
 
         versionCode Integer.parseInt(project.findProperty('versionCode') ?: new Date().format('yyyyMMdd', TimeZone.getTimeZone('UTC')))
