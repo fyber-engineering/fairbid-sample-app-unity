@@ -8,7 +8,7 @@
     <!-- Several networks FairBid mediates impose a min API higher than FairBid does. 
     By declaring them within the 'overrideLibrary' you can still use a lower min API in your app.
     FairBid will ensure, at runtime, that none of these networks will be started when running on a OS lower the minimum one required.-->
-    <uses-sdk tools:overrideLibrary="com.bytedance,
+    <uses-sdk android:minSdkVersion="23" tools:overrideLibrary="com.bytedance,
                                      com.google.android.ads.consent,
                                      com.google.android.gms.ads,
                                      com.google.android.gms.ads.impl,
